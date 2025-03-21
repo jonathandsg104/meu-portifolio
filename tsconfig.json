@@ -7,20 +7,23 @@
       "esnext"
     ],
     "allowJs": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true, // Ignora verificações detalhadas para evitar conflitos
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "allowSyntheticDefaultImports": true, // Permite importações padrão de módulos CommonJS
+    "strict": true, // Mantém o rigor para evitar inconsistências
+    "forceConsistentCasingInFileNames": true, // Garante consistência em nomes de arquivos
+    "noFallthroughCasesInSwitch": true, // Previne falhas em switches
+    "module": "esnext", // Usa o último sistema de módulo JavaScript
+    "moduleResolution": "node", // Resolve módulos como o Node.js
+    "resolveJsonModule": true, // Permite importação de arquivos JSON
+    "isolatedModules": true, // Garante que cada arquivo seja tratado como módulo isolado
+    "noEmit": true, // Impede a emissão de arquivos durante a compilação
+    "jsx": "react-jsx", // Configuração necessária para React 17+
+    "types": ["react", "react-dom"] // Inclui tipos explícitos para React e DOM
   },
   "include": [
-    "src"
+    "src",
+    "src/types"
   ]
 }
+
