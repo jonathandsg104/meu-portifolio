@@ -1,23 +1,12 @@
 import React, { FC } from 'react';
-import { IconType } from 'react-icons'; // Tipo de ícone para ajuste explícito
-import {
-  FaEnvelope,
-  FaWhatsapp,
-  FaFacebook,
-  FaInstagram,
-  FaGithub,
-  FaLinkedin,
-} from 'react-icons/fa';
+import WhatsAppIcon from '../../assets/icons/whatsapp.png';
+import FacebookIcon from '../../assets/icons/facebook.png';
+import InstagramIcon from '../../assets/icons/instagram.png';
+import LinkedInIcon from '../../assets/icons/linkedin.png';
+import EmailIcon from '../../assets/icons/email.png';
+import GithubIcon from '../../assets/icons/github.png';
 
 const Contato: FC = () => {
-  // Forçando os ícones a serem tratados como JSX válidos
-  const IconEnvelope: IconType = FaEnvelope;
-  const IconWhatsapp: IconType = FaWhatsapp;
-  const IconFacebook: IconType = FaFacebook;
-  const IconInstagram: IconType = FaInstagram;
-  const IconGithub: IconType = FaGithub;
-  const IconLinkedIn: IconType = FaLinkedin;
-
   return (
     <div id="contato" className="p-8 bg-blue-500 text-white shadow-md rounded-lg m-4 border border-gray-200">
       <p className="text-base mb-4 text-center">
@@ -25,7 +14,7 @@ const Contato: FC = () => {
       </p>
       <div className="flex flex-wrap justify-center space-x-4">
         <div className="flex items-center space-x-2">
-          <IconEnvelope size={32} className="text-white" />
+          <img src={EmailIcon} alt="Email" className="w-8 h-8" />
           <a
             href="mailto:jonathan.dsg104@hotmail.com"
             className="text-white hover:bg-black hover:text-white py-1 px-2 rounded"
@@ -36,7 +25,7 @@ const Contato: FC = () => {
           </a>
         </div>
         <div className="flex items-center space-x-2">
-          <IconWhatsapp size={32} className="text-green-500" />
+          <img src={WhatsAppIcon} alt="WhatsApp" className="w-8 h-8" />
           <a
             href="https://wa.me/5548996573094"
             className="text-white hover:bg-black hover:text-white py-1 px-2 rounded"
@@ -47,7 +36,7 @@ const Contato: FC = () => {
           </a>
         </div>
         <div className="flex items-center space-x-2">
-          <IconFacebook size={32} className="text-blue-700" />
+          <img src={FacebookIcon} alt="Facebook" className="w-8 h-8" />
           <a
             href="https://www.facebook.com/share/1EfUR15yXX/"
             className="text-white hover:bg-black hover:text-white py-1 px-2 rounded"
@@ -58,7 +47,7 @@ const Contato: FC = () => {
           </a>
         </div>
         <div className="flex items-center space-x-2">
-          <IconInstagram size={32} className="text-pink-600" />
+          <img src={InstagramIcon} alt="Instagram" className="w-8 h-8" />
           <a
             href="https://www.instagram.com/jonathangomes104?igsh=MXYyZmttY2M2NG9ocg=="
             className="text-white hover:bg-black hover:text-white py-1 px-2 rounded"
@@ -69,7 +58,7 @@ const Contato: FC = () => {
           </a>
         </div>
         <div className="flex items-center space-x-2">
-          <IconGithub size={32} className="text-gray-800" />
+          <img src={GithubIcon} alt="GitHub" className="w-8 h-8" />
           <a
             href="https://github.com/jonathandsg104"
             className="text-white hover:bg-black hover:text-white py-1 px-2 rounded"
@@ -80,7 +69,7 @@ const Contato: FC = () => {
           </a>
         </div>
         <div className="flex items-center space-x-2">
-          <IconLinkedIn size={32} className="text-blue-500" />
+          <img src={LinkedInIcon} alt="LinkedIn" className="w-8 h-8" />
           <a
             href="https://www.linkedin.com/in/jonathangomes104/"
             className="text-white hover:bg-black hover:text-white py-1 px-2 rounded"
@@ -96,3 +85,6 @@ const Contato: FC = () => {
 };
 
 export default Contato;
+
+
+

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, FC } from 'react';
-import { IconType } from 'react-icons'; // Importando o tipo IconType para garantir a interpretação correta do ícone
-import { FaArrowUp } from 'react-icons/fa'; // Importando o ícone
+import ArrowUpIcon from '../../assets/icons/arrow-up.png'; // Importando a imagem do ícone
 
 const ScrollToTopButton: FC = () => {
   const [showButton, setShowButton] = useState<boolean>(false);
@@ -26,9 +25,6 @@ const ScrollToTopButton: FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Forçando o tipo do ícone para evitar erros de tipagem
-  const IconArrowUp: IconType = FaArrowUp;
-
   return (
     <>
       {showButton && (
@@ -37,7 +33,7 @@ const ScrollToTopButton: FC = () => {
           className="fixed bottom-10 right-10 bg-blue-500 text-white p-3 rounded-full shadow-md hover:bg-black transition duration-300"
           aria-label="Voltar ao topo"
         >
-          <IconArrowUp size={24} className="text-white" />
+          <img src={ArrowUpIcon} alt="Voltar ao topo" className="w-6 h-6" />
         </button>
       )}
     </>
@@ -45,5 +41,6 @@ const ScrollToTopButton: FC = () => {
 };
 
 export default ScrollToTopButton;
+
 
 

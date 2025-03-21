@@ -1,6 +1,10 @@
 import React, { FC, useEffect, useState } from 'react';
-import { FaProjectDiagram, FaTrash, FaPlusCircle } from 'react-icons/fa';
 import api from '../../api';
+
+// Importando os ícones em PNG
+import ProjectIcon from '../../assets/icons/project.png';
+import TrashIcon from '../../assets/icons/trash.png';
+import AddIcon from '../../assets/icons/add.png';
 
 interface Projeto {
   _id?: string;
@@ -65,8 +69,9 @@ const Projetos: FC = () => {
 
   return (
     <div id="projetos" className="p-8 bg-white text-black shadow-md rounded-lg m-4 border border-gray-200">
+      {/* Substituí FaProjectDiagram por uma imagem */}
       <h1 className="text-3xl font-semibold mb-4 text-center flex items-center justify-center">
-        <FaProjectDiagram className="mr-2" /> Meus Projetos
+        <img src={ProjectIcon} alt="Meus Projetos" className="mr-2 w-8 h-8" /> Meus Projetos
       </h1>
 
       {!isAdmin && (
@@ -74,7 +79,7 @@ const Projetos: FC = () => {
           onClick={handleLogin}
           className="bg-blue-500 text-white py-2 px-4 rounded-md mb-4 hover:bg-black transition"
         >
-          <FaPlusCircle className="mr-2" /> Login de Administrador
+          <img src={AddIcon} alt="Login de Administrador" className="mr-2 w-6 h-6" /> Login de Administrador
         </button>
       )}
 
@@ -83,7 +88,7 @@ const Projetos: FC = () => {
           onClick={adicionarProjeto}
           className="bg-green-500 text-white py-2 px-4 rounded-md mb-4 hover:bg-black transition"
         >
-          <FaPlusCircle className="mr-2" /> Adicionar Projeto
+          <img src={AddIcon} alt="Adicionar Projeto" className="mr-2 w-6 h-6" /> Adicionar Projeto
         </button>
       )}
 
@@ -110,7 +115,7 @@ const Projetos: FC = () => {
                 onClick={() => deletarProjeto(projeto._id)}
                 className="text-red-500 flex items-center justify-center mt-4 hover:underline"
               >
-                <FaTrash className="mr-2" /> Deletar
+                <img src={TrashIcon} alt="Deletar" className="mr-2 w-6 h-6" /> Deletar
               </button>
             )}
           </div>
@@ -121,5 +126,6 @@ const Projetos: FC = () => {
 };
 
 export default Projetos;
+
 
 

@@ -1,6 +1,12 @@
 import React, { useState, useEffect, FC } from 'react';
-import { IconType } from 'react-icons'; // Tipo explícito para tratar os ícones
-import { FaBars, FaTimes, FaHome, FaInfoCircle, FaProjectDiagram, FaEnvelope } from 'react-icons/fa'; // Importação dos ícones
+
+// Importando as imagens dos ícones
+import MenuIcon from '../../assets/icons/menu.png';
+import CloseIcon from '../../assets/icons/close.png';
+import HomeIcon from '../../assets/icons/home.png';
+import SobreIcon from '../../assets/icons/sobremim.png';
+import ProjectIcon from '../../assets/icons/project.png';
+import ContactIcon from '../../assets/icons/contato.png';
 
 const Navbar: FC = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -27,25 +33,25 @@ const Navbar: FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Usando constantes com tipos explícitos para cada ícone
-  const IconBars: IconType = FaBars;
-  const IconTimes: IconType = FaTimes;
-  const IconHome: IconType = FaHome;
-  const IconInfoCircle: IconType = FaInfoCircle;
-  const IconProjectDiagram: IconType = FaProjectDiagram;
-  const IconEnvelope: IconType = FaEnvelope;
-
   return (
     <nav className="bg-blue-500 text-white p-4 flex justify-between items-center shadow-md rounded-lg m-4 border border-gray-200">
       <div className="text-2xl font-bold text-center w-full lg:w-auto">
         Portfólio de{' '}
-        <span className={`px-2 py-1 rounded ${highlight ? 'bg-black text-white' : blinking ? 'bg-black text-white' : ''}`}>
+        <span
+          className={`px-2 py-1 rounded ${
+            highlight ? 'bg-black text-white' : blinking ? 'bg-black text-white' : ''
+          }`}
+        >
           Jonathan Gomes
         </span>
       </div>
       <div className="lg:hidden">
         <button onClick={handleMenuClick} aria-label="Menu">
-          {menuOpen ? <IconTimes size={28} /> : <IconBars size={28} />}
+          {menuOpen ? (
+            <img src={CloseIcon} alt="Fechar Menu" className="w-7 h-7" />
+          ) : (
+            <img src={MenuIcon} alt="Abrir Menu" className="w-7 h-7" />
+          )}
         </button>
       </div>
       <ul
@@ -55,25 +61,25 @@ const Navbar: FC = () => {
       >
         <li>
           <a href="#home" className="hover:bg-black hover:text-white py-2 px-4 rounded flex items-center justify-center">
-            <IconHome className="mr-2 text-white" />
+            <img src={HomeIcon} alt="Home" className="mr-2 w-6 h-6" />
             Home
           </a>
         </li>
         <li>
           <a href="#sobre" className="hover:bg-black hover:text-white py-2 px-4 rounded flex items-center justify-center">
-            <IconInfoCircle className="mr-2 text-white" />
+            <img src={SobreIcon} alt="Sobre" className="mr-2 w-6 h-6" />
             Sobre
           </a>
         </li>
         <li>
           <a href="#projetos" className="hover:bg-black hover:text-white py-2 px-4 rounded flex items-center justify-center">
-            <IconProjectDiagram className="mr-2 text-white" />
+            <img src={ProjectIcon} alt="Projetos" className="mr-2 w-6 h-6" />
             Projetos
           </a>
         </li>
         <li>
           <a href="#contato" className="hover:bg-black hover:text-white py-2 px-4 rounded flex items-center justify-center">
-            <IconEnvelope className="mr-2 text-white" />
+            <img src={ContactIcon} alt="Contato" className="mr-2 w-6 h-6" />
             Contato
           </a>
         </li>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState, FC } from 'react';
-import { IconType } from 'react-icons'; // Adicionando o tipo IconType para garantir a validade dos ícones
-import { FaHome } from 'react-icons/fa'; // Importando o ícone
+import HomeIcon from '../../assets/icons/home.png'; // Importando o ícone como imagem
 import fotoJonathan from '../Home/Image/foto-jonathan.png';
 
 const Home: FC = () => {
@@ -21,13 +20,10 @@ const Home: FC = () => {
         return () => clearInterval(intervalId); // Limpa o intervalo para evitar vazamentos
     }, [message]); // Incluí message como dependência para evitar comportamento inesperado
 
-    // Usando o tipo para tratar o ícone explicitamente como válido
-    const IconHome: IconType = FaHome;
-
     return (
         <div id="home" className="p-8 bg-white text-black shadow-md rounded-lg m-4 border border-gray-200">
             <h1 className="text-4xl font-bold mb-4 text-center flex items-center justify-center">
-                <IconHome className="mr-2 text-blue-500 w-8 h-8" /> Bem-vindo ao Meu Portfólio
+                <img src={HomeIcon} alt="Home" className="mr-2 w-8 h-8" /> Bem-vindo ao Meu Portfólio
             </h1>
             <p className="text-lg text-center bg-blue-500 text-white py-2 px-4 rounded">
                 {text}
@@ -44,5 +40,6 @@ const Home: FC = () => {
 };
 
 export default Home;
+
 
 
